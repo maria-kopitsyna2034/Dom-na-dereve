@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<title>notepad</title>
+</head>
+<style type="text/css">
+ol,ul{
+display:block;
+list-style-type:none;
+margin:3px;
+}
+</style><body>
+<div>&lt;!DOCTYPE html&gt;<br>
+&lt;html lang="ru"&gt;<br>
+&lt;head&gt;<br>
+&nbsp;&nbsp;&nbsp; &lt;meta charset="UTF-8"&gt;<br>
+&nbsp;&nbsp;&nbsp; &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;<br>
+&nbsp;&nbsp;&nbsp; &lt;title&gt;&#1044;&#1077;&#1090;&#1077;&#1082;&#1090;&#1080;&#1074; &#1057;&#1077;&#1088;&#1105;&#1078;&#1072;: &#1064;&#1090;&#1072;&#1073; &#1085;&#1072; &#1076;&#1077;&#1088;&#1077;&#1074;&#1077;&lt;/title&gt;<br>
+&nbsp;&nbsp;&nbsp; &lt;style&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :root {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* &#1055;&#1072;&#1083;&#1080;&#1090;&#1088;&#1072; "&#1044;&#1086;&#1084;&#1080;&#1082; &#1085;&#1072; &#1076;&#1077;&#1088;&#1077;&#1074;&#1077;" */<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --bg-color: #fbf7f0; /* &#1052;&#1086;&#1083;&#1086;&#1095;&#1085;&#1086;-&#1073;&#1077;&#1078;&#1077;&#1074;&#1099;&#1081; &#1092;&#1086;&#1085; */<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --card-bg: #fffcf7; /* &#1057;&#1074;&#1077;&#1090;&#1083;&#1072;&#1103; &#1073;&#1091;&#1084;&#1072;&#1075;&#1072; */<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --text-color: #5d4037; /* &#1052;&#1103;&#1075;&#1082;&#1080;&#1081; &#1082;&#1086;&#1088;&#1080;&#1095;&#1085;&#1077;&#1074;&#1099;&#1081; &#1076;&#1083;&#1103; &#1090;&#1077;&#1082;&#1089;&#1090;&#1072; */<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --accent-green: #8bc34a; /* &#1058;&#1077;&#1087;&#1083;&#1099;&#1081; &#1079;&#1077;&#1083;&#1077;&#1085;&#1099;&#1081; (&#1083;&#1080;&#1089;&#1090;&#1074;&#1072;) */<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --wood-brown: #a1887f; /* &#1062;&#1074;&#1077;&#1090; &#1076;&#1077;&#1088;&#1077;&#1074;&#1072; &#1076;&#1083;&#1103; &#1088;&#1072;&#1084;&#1086;&#1082; */<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --hint-color: #d7ccc8; /* &#1057;&#1074;&#1077;&#1090;&#1083;&#1086;-&#1082;&#1086;&#1088;&#1080;&#1095;&#1085;&#1077;&#1074;&#1099;&#1081; &#1076;&#1083;&#1103; &#1087;&#1086;&#1076;&#1089;&#1082;&#1072;&#1079;&#1086;&#1082; */<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --success-color: #7cb342; /* &#1053;&#1072;&#1089;&#1099;&#1097;&#1077;&#1085;&#1085;&#1099;&#1081; &#1079;&#1077;&#1083;&#1077;&#1085;&#1099;&#1081; &#1076;&#1083;&#1103; &#1091;&#1089;&#1087;&#1077;&#1093;&#1072; */<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; body {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* &#1048;&#1089;&#1087;&#1086;&#1083;&#1100;&#1079;&#1091;&#1077;&#1084; &#1084;&#1072;&#1082;&#1089;&#1080;&#1084;&#1072;&#1083;&#1100;&#1085;&#1086; &#1086;&#1082;&#1088;&#1091;&#1075;&#1083;&#1099;&#1077; &#1076;&#1086;&#1089;&#1090;&#1091;&#1087;&#1085;&#1099;&#1077; &#1096;&#1088;&#1080;&#1092;&#1090;&#1099; */<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-family: 'Comic Sans MS', 'Segoe UI Rounded', 'Roboto Rounded', sans-serif;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-color: var(--bg-color);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* &#1058;&#1086;&#1085;&#1082;&#1080;&#1081; &#1087;&#1072;&#1090;&#1090;&#1077;&#1088;&#1085;, &#1080;&#1084;&#1080;&#1090;&#1080;&#1088;&#1091;&#1102;&#1097;&#1080;&#1081; &#1090;&#1077;&#1082;&#1089;&#1090;&#1091;&#1088;&#1091; &#1073;&#1091;&#1084;&#1072;&#1075;&#1080; */<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-image: linear-gradient(rgba(255,255,255,.5) 2px, transparent 2px),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; linear-gradient(90deg, rgba(255,255,255,.5) 2px, transparent 2px),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; linear-gradient(rgba(255,255,255,.28) 1px, transparent 1px),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; linear-gradient(90deg, rgba(255,255,255,.28) 1px, transparent 1px);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; color: var(--text-color);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; margin: 0;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display: flex;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; justify-content: center;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; align-items: center;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; min-height: 100vh;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; line-height: 1.7;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; padding: 20px;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #game-container {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; width: 100%;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; max-width: 620px;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background: var(--card-bg);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; padding: 45px;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* &#1056;&#1072;&#1084;&#1082;&#1072; &#1082;&#1072;&#1082; &#1076;&#1077;&#1088;&#1077;&#1074;&#1103;&#1085;&#1085;&#1072;&#1103; &#1076;&#1086;&#1089;&#1082;&#1072; */<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border: 10px solid var(--wood-brown);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border-radius: 40px;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; box-shadow: <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; inset 0 0 30px rgba(161, 136, 127, 0.2), /* &#1042;&#1085;&#1091;&#1090;&#1088;&#1077;&#1085;&#1085;&#1077;&#1077; &#1089;&#1074;&#1077;&#1095;&#1077;&#1085;&#1080;&#1077; */<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0 15px 35px rgba(93, 64, 55, 0.15); /* &#1052;&#1103;&#1075;&#1082;&#1072;&#1103; &#1090;&#1077;&#1085;&#1100; &#1089;&#1085;&#1072;&#1088;&#1091;&#1078;&#1080; */<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; text-align: center;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; position: relative;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; box-sizing: border-box;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* &#1055;&#1088;&#1086;&#1075;&#1088;&#1077;&#1089;&#1089;-&#1073;&#1072;&#1088; &#1082;&#1072;&#1082; &#1079;&#1077;&#1083;&#1077;&#1085;&#1072;&#1103; &#1074;&#1077;&#1090;&#1086;&#1095;&#1082;&#1072; */<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .progress-bar {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; position: absolute;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; top: -25px;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; left: 50%;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; transform: translateX(-50%);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; width: 70%;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; height: 14px;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background: #efebe9;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border: 4px solid var(--wood-brown);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border-radius: 15px;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; overflow: hidden;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #progress-fill {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; height: 100%;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background: var(--accent-green);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; width: 0%;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border-radius: 10px;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; transition: width 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h1 { <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-size: 32px; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; margin-bottom: 25px; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; color: var(--text-color);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-weight: bold;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p, .math-box, textarea, input { <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-size: 22px; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .options-grid {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display: grid;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; grid-template-columns: 1fr 1fr;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; gap: 20px;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; margin-top: 35px;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; button {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background: var(--accent-green);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; color: white;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* &#1058;&#1086;&#1083;&#1089;&#1090;&#1072;&#1103; &#1084;&#1103;&#1075;&#1082;&#1072;&#1103; &#1088;&#1072;&#1084;&#1082;&#1072; &#1076;&#1083;&#1103; &#1082;&#1085;&#1086;&#1087;&#1086;&#1082; */<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border: 4px solid #7cb342;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; padding: 22px 30px;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-size: 20px;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* &#1054;&#1095;&#1077;&#1085;&#1100; &#1089;&#1080;&#1083;&#1100;&#1085;&#1086;&#1077; &#1089;&#1082;&#1088;&#1091;&#1075;&#1083;&#1077;&#1085;&#1080;&#1077; */<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border-radius: 30px;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cursor: pointer;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-family: inherit;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-weight: bold;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; transition: all 0.3s ease;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; touch-action: manipulation;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; box-shadow: 0 6px #6a9b38; /* &#1054;&#1073;&#1098;&#1077;&#1084;&#1085;&#1072;&#1103; &#1082;&#1085;&#1086;&#1087;&#1082;&#1072; */<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; position: relative;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; top: 0;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; button:hover {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background: #9ccc65;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; top: 2px;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; box-shadow: 0 4px #6a9b38;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; button:active {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; top: 6px;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; box-shadow: 0 0px #6a9b38;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* &#1050;&#1085;&#1086;&#1087;&#1082;&#1072; &#1087;&#1086;&#1076;&#1089;&#1082;&#1072;&#1079;&#1082;&#1080; - &#1082;&#1072;&#1082; &#1083;&#1080;&#1089;&#1090;&#1080;&#1082; */<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; button.hint-btn {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background: transparent;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; color: var(--wood-brown);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border: 3px dashed var(--wood-brown);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; margin-top: 30px;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; padding: 12px 25px;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-size: 18px;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; box-shadow: none;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; button.hint-btn:hover {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background: #efebe9;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; top: 0;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; box-shadow: none;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; color: var(--text-color);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #feedback, #hint-text {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; margin-top: 25px;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-weight: bold;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; min-height: 1.8em;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-size: 20px;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #feedback { color: var(--success-color); }<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #hint-text { <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; color: var(--wood-brown); <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-style: italic; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background: #efebe9;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; padding: 10px;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border-radius: 15px;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display: inline-block;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .hidden { display: none; }<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* &#1054;&#1095;&#1077;&#1085;&#1100; &#1087;&#1083;&#1072;&#1074;&#1085;&#1072;&#1103; &#1072;&#1085;&#1080;&#1084;&#1072;&#1094;&#1080;&#1103; &#1087;&#1086;&#1103;&#1074;&#1083;&#1077;&#1085;&#1080;&#1103; */<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .screen {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; animation: softFadeIn 0.8s ease-in-out;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @keyframes softFadeIn {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; from { opacity: 0; transform: translateY(20px); }<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; to { opacity: 1; transform: translateY(0); }<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .math-box {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; letter-spacing: 3px;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background: #efebe9; /* &#1062;&#1074;&#1077;&#1090; &#1089;&#1074;&#1077;&#1090;&#1083;&#1086;&#1075;&#1086; &#1076;&#1077;&#1088;&#1077;&#1074;&#1072; */<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; padding: 25px;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border: 4px solid var(--wood-brown);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border-radius: 25px;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display: inline-block;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; margin: 25px 0;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-weight: bold;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; textarea {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; width: 100%;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; padding: 20px;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border: 4px solid var(--wood-brown);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border-radius: 20px;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; box-sizing: border-box;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; margin-top: 20px;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-family: inherit;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background: #fffcf7;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; resize: none;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .spatial-img-container {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background: white;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border: 4px solid var(--wood-brown);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border-radius: 25px;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; padding: 15px;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cursor: pointer;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; transition: 0.3s;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .spatial-img-container:hover {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border-color: var(--accent-green);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background: #f1f8e9;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .spatial-img {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; width: 130px;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; height: 130px;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* &#1052;&#1086;&#1073;&#1080;&#1083;&#1100;&#1085;&#1072;&#1103; &#1072;&#1076;&#1072;&#1087;&#1090;&#1072;&#1094;&#1080;&#1103; &#1076;&#1083;&#1103; &#1082;&#1085;&#1086;&#1087;&#1086;&#1082; */<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @media (max-width: 500px) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .options-grid {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; grid-template-columns: 1fr;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h1 { font-size: 26px; }<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p, .math-box { font-size: 20px; }<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp; &lt;/style&gt;<br>
+&lt;/head&gt;<br>
+&lt;body&gt;<br>
+<br>
+&lt;div id="game-container"&gt;<br>
+&nbsp;&nbsp;&nbsp; &lt;div class="progress-bar"&gt;&lt;div id="progress-fill"&gt;&lt;/div&gt;&lt;/div&gt;<br>
+<br>
+&nbsp;&nbsp;&nbsp; &lt;div id="screen-0" class="screen"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;h1&gt;&#127969; &#1064;&#1090;&#1072;&#1073; &#1076;&#1077;&#1090;&#1077;&#1082;&#1090;&#1080;&#1074;&#1072; &#1057;&#1077;&#1088;&#1105;&#1078;&#1080;&lt;/h1&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;&#1055;&#1088;&#1080;&#1074;&#1077;&#1090;! &#1052;&#1099; &#1074; &#1090;&#1074;&#1086;&#1077;&#1084; &#1089;&#1077;&#1082;&#1088;&#1077;&#1090;&#1085;&#1086;&#1084; &#1096;&#1090;&#1072;&#1073;&#1077; &#1085;&#1072; &#1076;&#1077;&#1088;&#1077;&#1074;&#1077;. &#1055;&#1086;&#1089;&#1090;&#1091;&#1087;&#1080;&#1083; &#1089;&#1080;&#1075;&#1085;&#1072;&#1083;: &#1082;&#1090;&#1086;-&#1090;&#1086; &#1089;&#1098;&#1077;&#1083; &#1074;&#1089;&#1077; &#1087;&#1088;&#1072;&#1079;&#1076;&#1085;&#1080;&#1095;&#1085;&#1099;&#1077; &#1087;&#1080;&#1088;&#1086;&#1078;&#1085;&#1099;&#1077;. &#1044;&#1072;&#1074;&#1072;&#1081; &#1089;&#1087;&#1086;&#1082;&#1086;&#1081;&#1085;&#1086; &#1074;&#1086; &#1074;&#1089;&#1105;&#1084; &#1088;&#1072;&#1079;&#1073;&#1077;&#1088;&#1105;&#1084;&#1089;&#1103;?&lt;/p&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;button onclick="nextStep(1)" style="margin-top: 20px;"&gt;&#1054;&#1090;&#1082;&#1088;&#1099;&#1090;&#1100; &#1076;&#1077;&#1083;&#1086;&lt;/button&gt;<br>
+&nbsp;&nbsp;&nbsp; &lt;/div&gt;<br>
+<br>
+&nbsp;&nbsp;&nbsp; &lt;div id="screen-1" class="screen hidden"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;h1&gt;&#1047;&#1072;&#1076;&#1072;&#1085;&#1080;&#1077; &#8470;1&lt;/h1&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;&#1057;&#1077;&#1088;&#1105;&#1078;&#1072; &#1089;&#1084;&#1086;&#1090;&#1088;&#1080;&#1090; &#1074; &#1073;&#1080;&#1085;&#1086;&#1082;&#1083;&#1100;. &#1042; &#1085;&#1077;&#1073;&#1077; &#1083;&#1077;&#1090;&#1077;&#1083;&#1080;: &#1086;&#1088;&#1105;&#1083;, &#1075;&#1086;&#1083;&#1091;&#1073;&#1100;, &#1084;&#1091;&#1093;&#1072; &#1080; &#1089;&#1090;&#1088;&#1077;&#1082;&#1086;&#1079;&#1072;. &#1057;&#1082;&#1086;&#1083;&#1100;&#1082;&#1086; &lt;b&gt;&#1087;&#1090;&#1080;&#1094;&lt;/b&gt; &#1090;&#1099; &#1085;&#1072;&#1089;&#1095;&#1080;&#1090;&#1072;&#1083;?&lt;/p&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="options-grid"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;button onclick="checkAnswer(1, 1)"&gt;1&lt;/button&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;button onclick="checkAnswer(1, 2)"&gt;2&lt;/button&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;button onclick="checkAnswer(1, 3)"&gt;3&lt;/button&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;button onclick="checkAnswer(1, 4)"&gt;4&lt;/button&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div id="hint-container-1" class="hidden-hint"&gt;&lt;p id="hint-text-1"&gt;&lt;/p&gt;&lt;/div&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;button class="hint-btn" onclick="showHint(1, '&#1044;&#1077;&#1090;&#1077;&#1082;&#1090;&#1080;&#1074; &#1076;&#1091;&#1084;&#1072;&#1077;&#1090;: &#1082;&#1072;&#1078;&#1077;&#1090;&#1089;&#1103;, &#1084;&#1091;&#1093;&#1072; &#1080; &#1089;&#1090;&#1088;&#1077;&#1082;&#1086;&#1079;&#1072; &#8212; &#1101;&#1090;&#1086; &#1085;&#1072;&#1089;&#1077;&#1082;&#1086;&#1084;&#1099;&#1077;, &#1072; &#1085;&#1077; &#1087;&#1090;&#1080;&#1094;&#1099;...')"&gt;&#1053;&#1091;&#1078;&#1085;&#1072; &#1087;&#1086;&#1076;&#1089;&#1082;&#1072;&#1079;&#1082;&#1072;?&lt;/button&gt;<br>
+&nbsp;&nbsp;&nbsp; &lt;/div&gt;<br>
+<br>
+&nbsp;&nbsp;&nbsp; &lt;div id="screen-2" class="screen hidden"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;h1&gt;&#1047;&#1072;&#1076;&#1072;&#1085;&#1080;&#1077; &#8470;2&lt;/h1&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;&#1057;&#1088;&#1072;&#1074;&#1085;&#1080;&#1074;&#1072;&#1077;&#1084; &#1089;&#1083;&#1077;&#1076;&#1099;:&lt;br&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#1057;&#1077;&#1088;&#1105;&#1078;&#1072; &#1074;&#1099;&#1096;&#1077; &#1057;&#1072;&#1096;&#1080;. &#1057;&#1072;&#1096;&#1072; &#1074;&#1099;&#1096;&#1077; &#1054;&#1083;&#1077;&#1075;&#1072;.&lt;br&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#1052;&#1080;&#1096;&#1072; &#1074;&#1099;&#1096;&#1077; &#1057;&#1077;&#1088;&#1105;&#1078;&#1080;.&lt;br&gt;&#1050;&#1090;&#1086; &#1079;&#1076;&#1077;&#1089;&#1100; &#1089;&#1072;&#1084;&#1099;&#1081; &#1074;&#1099;&#1089;&#1086;&#1082;&#1080;&#1081;?&lt;/p&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="options-grid"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;button onclick="checkAnswer(2, '&#1057;&#1072;&#1096;&#1072;')"&gt;&#1057;&#1072;&#1096;&#1072;&lt;/button&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;button onclick="checkAnswer(2, '&#1054;&#1083;&#1077;&#1075;')"&gt;&#1054;&#1083;&#1077;&#1075;&lt;/button&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;button onclick="checkAnswer(2, '&#1052;&#1080;&#1096;&#1072;')"&gt;&#1052;&#1080;&#1096;&#1072;&lt;/button&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;button onclick="checkAnswer(2, '&#1057;&#1077;&#1088;&#1105;&#1078;&#1072;')"&gt;&#1057;&#1077;&#1088;&#1105;&#1078;&#1072;&lt;/button&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;button class="hint-btn" onclick="showHint(2, '&#1044;&#1077;&#1090;&#1077;&#1082;&#1090;&#1080;&#1074; &#1088;&#1072;&#1089;&#1089;&#1091;&#1078;&#1076;&#1072;&#1077;&#1090;: &#1052;&#1080;&#1096;&#1072; &#1074;&#1099;&#1096;&#1077; &#1057;&#1077;&#1088;&#1105;&#1078;&#1080;, &#1072; &#1057;&#1077;&#1088;&#1105;&#1078;&#1072; &#1074;&#1099;&#1096;&#1077; &#1074;&#1089;&#1077;&#1093; &#1086;&#1089;&#1090;&#1072;&#1083;&#1100;&#1085;&#1099;&#1093; &#1088;&#1077;&#1073;&#1103;&#1090;...')"&gt;&#1053;&#1091;&#1078;&#1085;&#1072; &#1087;&#1086;&#1076;&#1089;&#1082;&#1072;&#1079;&#1082;&#1072;?&lt;/button&gt;<br>
+&nbsp;&nbsp;&nbsp; &lt;/div&gt;<br>
+<br>
+&nbsp;&nbsp;&nbsp; &lt;div id="screen-3" class="screen hidden"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;h1&gt;&#1047;&#1072;&#1076;&#1072;&#1085;&#1080;&#1077; &#8470;3&lt;/h1&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;&#1064;&#1080;&#1092;&#1088; &#1085;&#1072; &#1076;&#1077;&#1088;&#1077;&#1074;&#1103;&#1085;&#1085;&#1086;&#1081; &#1090;&#1072;&#1073;&#1083;&#1080;&#1095;&#1082;&#1077;. &#1050;&#1072;&#1082;&#1086;&#1081; &#1079;&#1085;&#1072;&#1082; &#1087;&#1086;&#1089;&#1090;&#1072;&#1074;&#1080;&#1090;&#1100; (+ &#1080;&#1083;&#1080; -), &#1095;&#1090;&#1086;&#1073;&#1099; &#1087;&#1086;&#1083;&#1091;&#1095;&#1080;&#1083;&#1086;&#1089;&#1100; 10?&lt;/p&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="math-box"&gt;7 _ 4 _ 2 _ 5 = 10&lt;/div&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="options-grid" style="grid-template-columns: 1fr;"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;button onclick="checkAnswer(3, '7 - 4 + 2 + 5')"&gt;&#1055;&#1086;&#1087;&#1088;&#1086;&#1073;&#1086;&#1074;&#1072;&#1090;&#1100;: 7 - 4 + 2 + 5&lt;/button&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;button onclick="checkAnswer(3, '7 + 4 + 2 - 5')"&gt;&#1055;&#1086;&#1087;&#1088;&#1086;&#1073;&#1086;&#1074;&#1072;&#1090;&#1100;: 7 + 4 + 2 - 5&lt;/button&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;button onclick="checkAnswer(3, '7 + 4 - 2 + 5')"&gt;&#1055;&#1086;&#1087;&#1088;&#1086;&#1073;&#1086;&#1074;&#1072;&#1090;&#1100;: 7 + 4 - 2 + 5&lt;/button&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;button class="hint-btn" onclick="showHint(3, '&#1044;&#1077;&#1090;&#1077;&#1082;&#1090;&#1080;&#1074; &#1087;&#1088;&#1080;&#1082;&#1080;&#1076;&#1099;&#1074;&#1072;&#1077;&#1090;: &#1077;&#1089;&#1083;&#1080; &#1080;&#1079; 7 &#1074;&#1099;&#1095;&#1077;&#1089;&#1090;&#1100; 4, &#1086;&#1089;&#1090;&#1072;&#1085;&#1077;&#1090;&#1089;&#1103; 3. &#1040; &#1095;&#1090;&#1086; &#1076;&#1072;&#1083;&#1100;&#1096;&#1077;?')"&gt;&#1053;&#1091;&#1078;&#1085;&#1072; &#1087;&#1086;&#1076;&#1089;&#1082;&#1072;&#1079;&#1082;&#1072;?&lt;/button&gt;<br>
+&nbsp;&nbsp;&nbsp; &lt;/div&gt;<br>
+<br>
+&nbsp;&nbsp;&nbsp; &lt;div id="screen-4" class="screen hidden"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;h1&gt;&#1047;&#1072;&#1076;&#1072;&#1085;&#1080;&#1077; &#8470;4&lt;/h1&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;&#1057;&#1086;&#1073;&#1080;&#1088;&#1072;&#1077;&#1084;&#1089;&#1103; &#1074; &#1076;&#1086;&#1088;&#1086;&#1075;&#1091;. &#1042; &#1086;&#1076;&#1080;&#1085; &#1087;&#1072;&#1082;&#1077;&#1090; &#1074;&#1083;&#1077;&#1079;&#1072;&#1077;&#1090; 2 &#1082;&#1075;. &#1052;&#1072;&#1084;&#1072; &#1076;&#1072;&#1083;&#1072; 4 &#1082;&#1075; &#1082;&#1072;&#1088;&#1090;&#1086;&#1096;&#1082;&#1080; &#1080; 1 &#1082;&#1075; &#1076;&#1099;&#1085;&#1080;. &#1057;&#1082;&#1086;&#1083;&#1100;&#1082;&#1086; &#1087;&#1072;&#1082;&#1077;&#1090;&#1086;&#1074; &#1085;&#1072;&#1084; &#1087;&#1086;&#1085;&#1072;&#1076;&#1086;&#1073;&#1080;&#1090;&#1089;&#1103;?&lt;/p&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="options-grid"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;button onclick="checkAnswer(4, 1)"&gt;1 &#1087;&#1072;&#1082;&#1077;&#1090;&lt;/button&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;button onclick="checkAnswer(4, 2)"&gt;2 &#1087;&#1072;&#1082;&#1077;&#1090;&#1072;&lt;/button&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;button onclick="checkAnswer(4, 3)"&gt;3 &#1087;&#1072;&#1082;&#1077;&#1090;&#1072;&lt;/button&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;button onclick="checkAnswer(4, 4)"&gt;4 &#1087;&#1072;&#1082;&#1077;&#1090;&#1072;&lt;/button&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;button class="hint-btn" onclick="showHint(4, '&#1044;&#1077;&#1090;&#1077;&#1082;&#1090;&#1080;&#1074; &#1089;&#1095;&#1080;&#1090;&#1072;&#1077;&#1090;: &#1074;&#1089;&#1077;&#1075;&#1086; &#1091; &#1085;&#1072;&#1089; 5 &#1082;&#1075; &#1075;&#1088;&#1091;&#1079;&#1072;. &#1045;&#1089;&#1083;&#1080; &#1074; &#1087;&#1072;&#1082;&#1077;&#1090; &#1082;&#1083;&#1072;&#1089;&#1090;&#1100; &#1087;&#1086; 2 &#1082;&#1075;...')"&gt;&#1053;&#1091;&#1078;&#1085;&#1072; &#1087;&#1086;&#1076;&#1089;&#1082;&#1072;&#1079;&#1082;&#1072;?&lt;/button&gt;<br>
+&nbsp;&nbsp;&nbsp; &lt;/div&gt;<br>
+<br>
+&nbsp;&nbsp;&nbsp; &lt;div id="screen-5" class="screen hidden"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;h1&gt;&#1047;&#1072;&#1076;&#1072;&#1085;&#1080;&#1077; &#8470;5&lt;/h1&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;&#1042;&#1079;&#1074;&#1077;&#1096;&#1080;&#1074;&#1072;&#1077;&#1084; &#1091;&#1083;&#1080;&#1082;&#1080; &#1085;&#1072; &#1089;&#1090;&#1072;&#1088;&#1099;&#1093; &#1074;&#1077;&#1089;&#1072;&#1093;. &#1040;&#1088;&#1073;&#1091;&#1079; &#1080; &#1075;&#1080;&#1088;&#1103; 1 &#1082;&#1075; &#1074;&#1077;&#1089;&#1103;&#1090; &#1089;&#1090;&#1086;&#1083;&#1100;&#1082;&#1086; &#1078;&#1077;, &#1089;&#1082;&#1086;&#1083;&#1100;&#1082;&#1086; &#1076;&#1074;&#1077; &#1075;&#1080;&#1088;&#1080; (6 &#1082;&#1075; &#1080; 3 &#1082;&#1075;). &#1057;&#1082;&#1086;&#1083;&#1100;&#1082;&#1086; &#1074;&#1077;&#1089;&#1080;&#1090; &#1072;&#1088;&#1073;&#1091;&#1079;?&lt;/p&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="math-box"&gt;&#127817; + 1&#1082;&#1075; = 6&#1082;&#1075; + 3&#1082;&#1075;&lt;/div&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="options-grid"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;button onclick="checkAnswer(5, 7)"&gt;7 &#1082;&#1075;&lt;/button&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;button onclick="checkAnswer(5, 8)"&gt;8 &#1082;&#1075;&lt;/button&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;button onclick="checkAnswer(5, 9)"&gt;9 &#1082;&#1075;&lt;/button&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;button class="hint-btn" onclick="showHint(5, '&#1044;&#1077;&#1090;&#1077;&#1082;&#1090;&#1080;&#1074; &#1089;&#1084;&#1086;&#1090;&#1088;&#1080;&#1090;: &#1085;&#1072; &#1087;&#1088;&#1072;&#1074;&#1086;&#1081; &#1095;&#1072;&#1096;&#1077; &#1074;&#1077;&#1089;&#1086;&#1074; &#1074;&#1089;&#1077;&#1075;&#1086; 9 &#1082;&#1075;. &#1047;&#1085;&#1072;&#1095;&#1080;&#1090;, &#1080; &#1089;&#1083;&#1077;&#1074;&#1072; &#1076;&#1086;&#1083;&#1078;&#1085;&#1086; &#1073;&#1099;&#1090;&#1100; 9...')"&gt;&#1053;&#1091;&#1078;&#1085;&#1072; &#1087;&#1086;&#1076;&#1089;&#1082;&#1072;&#1079;&#1082;&#1072;?&lt;/button&gt;<br>
+&nbsp;&nbsp;&nbsp; &lt;/div&gt;<br>
+<br>
+&nbsp;&nbsp;&nbsp; &lt;div id="screen-6" class="screen hidden"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;h1&gt;&#1047;&#1072;&#1076;&#1072;&#1085;&#1080;&#1077; &#8470;6&lt;/h1&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;&#1053;&#1091;&#1078;&#1085;&#1086; &#1088;&#1072;&#1079;&#1076;&#1077;&#1083;&#1080;&#1090;&#1100; &#1082;&#1072;&#1088;&#1090;&#1091;-&#1082;&#1074;&#1072;&#1076;&#1088;&#1072;&#1090; &#1085;&#1072; 4 &#1089;&#1086;&#1074;&#1077;&#1088;&#1096;&#1077;&#1085;&#1085;&#1086; &#1086;&#1076;&#1080;&#1085;&#1072;&#1082;&#1086;&#1074;&#1099;&#1077; &#1095;&#1072;&#1089;&#1090;&#1080;. &#1050;&#1072;&#1082;&#1086;&#1081; &#1095;&#1077;&#1088;&#1090;&#1077;&#1078; &#1074;&#1077;&#1088;&#1085;&#1099;&#1081;?&lt;/p&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="options-grid"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="spatial-img-container" onclick="checkAnswer(6, 'correct')"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;svg viewBox="0 0 100 100" class="spatial-img"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;rect x="2" y="2" width="96" height="96" fill="none" stroke="#a1887f" stroke-width="4" rx="10"/&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;line x1="50" y1="2" x2="50" y2="98" stroke="#a1887f" stroke-width="4" stroke-linecap="round"/&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;line x1="2" y1="50" x2="98" y2="50" stroke="#a1887f" stroke-width="4" stroke-linecap="round"/&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/svg&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;&#1042;&#1072;&#1088;&#1080;&#1072;&#1085;&#1090; &#1040;&lt;/p&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="spatial-img-container" onclick="checkAnswer(6, 'wrong')"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;svg viewBox="0 0 100 100" class="spatial-img"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;rect x="2" y="2" width="96" height="96" fill="none" stroke="#a1887f" stroke-width="4" rx="10"/&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;line x1="2" y1="2" x2="98" y2="98" stroke="#a1887f" stroke-width="4" stroke-linecap="round"/&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;line x1="2" y1="30" x2="98" y2="30" stroke="#a1887f" stroke-width="4" stroke-linecap="round"/&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/svg&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;&#1042;&#1072;&#1088;&#1080;&#1072;&#1085;&#1090; &#1041;&lt;/p&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;button class="hint-btn" onclick="showHint(6, '&#1044;&#1077;&#1090;&#1077;&#1082;&#1090;&#1080;&#1074; &#1074;&#1085;&#1080;&#1084;&#1072;&#1090;&#1077;&#1083;&#1100;&#1085;&#1086; &#1089;&#1084;&#1086;&#1090;&#1088;&#1080;&#1090;: &#1074;&#1089;&#1077; 4 &#1095;&#1072;&#1089;&#1090;&#1080; &#1076;&#1086;&#1083;&#1078;&#1085;&#1099; &#1073;&#1099;&#1090;&#1100; &#1086;&#1076;&#1080;&#1085;&#1072;&#1082;&#1086;&#1074;&#1099;&#1084;&#1080; &#1087;&#1086; &#1092;&#1086;&#1088;&#1084;&#1077; &#1080; &#1088;&#1072;&#1079;&#1084;&#1077;&#1088;&#1091;.')"&gt;&#1053;&#1091;&#1078;&#1085;&#1072; &#1087;&#1086;&#1076;&#1089;&#1082;&#1072;&#1079;&#1082;&#1072;?&lt;/button&gt;<br>
+&nbsp;&nbsp;&nbsp; &lt;/div&gt;<br>
+<br>
+&nbsp;&nbsp;&nbsp; &lt;div id="screen-7" class="screen hidden"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;h1&gt;&#1060;&#1080;&#1085;&#1072;&#1083;&#1100;&#1085;&#1099;&#1081; &#1086;&#1090;&#1095;&#1077;&#1090;&lt;/h1&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;&#1050;&#1090;&#1086; &#1078;&#1077; &#1089;&#1098;&#1077;&#1083; &#1087;&#1080;&#1088;&#1086;&#1078;&#1085;&#1099;&#1077;? &#1047;&#1072;&#1087;&#1080;&#1096;&#1080; &#1089;&#1074;&#1086;&#1102; &#1074;&#1077;&#1088;&#1089;&#1080;&#1102; &#1074; &#1085;&#1072;&#1096; &#1073;&#1086;&#1088;&#1090;&#1086;&#1074;&#1086;&#1081; &#1078;&#1091;&#1088;&#1085;&#1072;&#1083; (&#1085;&#1072;&#1087;&#1088;&#1080;&#1084;&#1077;&#1088;: &#171;&#1069;&#1090;&#1086; &#1073;&#1099;&#1083; &#1082;&#1086;&#1090;, &#1103; &#1085;&#1072;&#1096;&#1077;&#1083; &#1089;&#1083;&#1077;&#1076;&#1099; &#1083;&#1072;&#1087;&#187;):&lt;/p&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;textarea id="final-story" placeholder="&#1047;&#1072;&#1087;&#1080;&#1096;&#1080; &#1089;&#1074;&#1086;&#1080; &#1084;&#1099;&#1089;&#1083;&#1080; &#1079;&#1076;&#1077;&#1089;&#1100;..."&gt;&lt;/textarea&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;br&gt;&lt;br&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;button onclick="checkAnswer(7, 'final')" style="width: 100%"&gt;&#1047;&#1072;&#1082;&#1088;&#1099;&#1090;&#1100; &#1076;&#1077;&#1083;&#1086;!&lt;/button&gt;<br>
+&nbsp;&nbsp;&nbsp; &lt;/div&gt;<br>
+<br>
+&nbsp;&nbsp;&nbsp; &lt;div id="screen-8" class="screen hidden"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;h1&gt;&#127881; &#1044;&#1045;&#1051;&#1054; &#1056;&#1040;&#1057;&#1050;&#1056;&#1067;&#1058;&#1054;!&lt;/h1&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div style="font-size: 60px; margin: 20px;"&gt;&#127795;&#128269;&#127856;&lt;/div&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p id="user-conclusion" class="math-box" style="font-weight: normal; font-style: italic;"&gt;&lt;/p&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;&#1054;&#1090;&#1083;&#1080;&#1095;&#1085;&#1072;&#1103; &#1088;&#1072;&#1073;&#1086;&#1090;&#1072; &#1074; &#1096;&#1090;&#1072;&#1073;&#1077;, &#1076;&#1077;&#1090;&#1077;&#1082;&#1090;&#1080;&#1074; &#1057;&#1077;&#1088;&#1105;&#1078;&#1072;! &#1058;&#1074;&#1086;&#1103; &#1083;&#1086;&#1075;&#1080;&#1082;&#1072; &#1080; &#1089;&#1087;&#1086;&#1082;&#1086;&#1081;&#1089;&#1090;&#1074;&#1080;&#1077; &#1087;&#1086;&#1084;&#1086;&#1075;&#1083;&#1080; &#1074;&#1086; &#1074;&#1089;&#1105;&#1084; &#1088;&#1072;&#1079;&#1086;&#1073;&#1088;&#1072;&#1090;&#1100;&#1089;&#1103;.&lt;/p&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;button onclick="location.reload()" style="margin-top:30px;"&gt;&#1042;&#1077;&#1088;&#1085;&#1091;&#1090;&#1100;&#1089;&#1103; &#1074; &#1085;&#1072;&#1095;&#1072;&#1083;&#1086;&lt;/button&gt;<br>
+&nbsp;&nbsp;&nbsp; &lt;/div&gt;<br>
+<br>
+&nbsp;&nbsp;&nbsp; &lt;div id="feedback"&gt;&lt;/div&gt;<br>
+&nbsp;&nbsp;&nbsp; &lt;div id="hint-text" style="display: none;"&gt;&lt;/div&gt;<br>
+&lt;/div&gt;<br>
+<br>
+&lt;script&gt;<br>
+&nbsp;&nbsp;&nbsp; // Javascript &#1086;&#1089;&#1090;&#1072;&#1083;&#1089;&#1103; &#1087;&#1088;&#1077;&#1078;&#1085;&#1080;&#1084;, &#1090;&#1072;&#1082; &#1082;&#1072;&#1082; &#1083;&#1086;&#1075;&#1080;&#1082;&#1072; &#1087;&#1086;&#1083;&#1085;&#1086;&#1089;&#1090;&#1100;&#1102; &#1089;&#1086;&#1086;&#1090;&#1074;&#1077;&#1090;&#1089;&#1090;&#1074;&#1091;&#1077;&#1090; &#1085;&#1086;&#1074;&#1099;&#1084; &#1090;&#1088;&#1077;&#1073;&#1086;&#1074;&#1072;&#1085;&#1080;&#1103;&#1084;<br>
+&nbsp;&nbsp;&nbsp; let currentStep = 0;<br>
+&nbsp;&nbsp;&nbsp; const totalSteps = 7;<br>
+<br>
+&nbsp;&nbsp;&nbsp; const praises = [<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "&#1047;&#1076;&#1086;&#1088;&#1086;&#1074;&#1086; &#1087;&#1086;&#1083;&#1091;&#1095;&#1080;&#1083;&#1086;&#1089;&#1100;!",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "&#1058;&#1099; &#1079;&#1072;&#1084;&#1077;&#1090;&#1080;&#1083; &#1074;&#1072;&#1078;&#1085;&#1091;&#1102; &#1076;&#1077;&#1090;&#1072;&#1083;&#1100;.",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "&#1054;&#1090;&#1083;&#1080;&#1095;&#1085;&#1099;&#1081; &#1093;&#1086;&#1076; &#1084;&#1099;&#1089;&#1083;&#1077;&#1081;!",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "&#1058;&#1074;&#1086;&#1103; &#1083;&#1086;&#1075;&#1080;&#1082;&#1072; &#1088;&#1072;&#1073;&#1086;&#1090;&#1072;&#1077;&#1090;!",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "&#1054;&#1095;&#1077;&#1085;&#1100; &#1074;&#1085;&#1080;&#1084;&#1072;&#1090;&#1077;&#1083;&#1100;&#1085;&#1086;!"<br>
+&nbsp;&nbsp;&nbsp; ];<br>
+<br>
+&nbsp;&nbsp;&nbsp; function updateProgress() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const percent = (currentStep / totalSteps) * 100;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; document.getElementById('progress-fill').style.width = percent + '%';<br>
+&nbsp;&nbsp;&nbsp; }<br>
+<br>
+&nbsp;&nbsp;&nbsp; function showHint(step, text) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const hintDiv = document.getElementById('hint-text');<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; hintDiv.style.display = 'inline-block';<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; hintDiv.innerText = text;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // &#1055;&#1086;&#1076;&#1089;&#1082;&#1072;&#1079;&#1082;&#1072; &#1074;&#1080;&#1089;&#1080;&#1090; &#1095;&#1091;&#1090;&#1100; &#1076;&#1086;&#1083;&#1100;&#1096;&#1077; &#1076;&#1083;&#1103; &#1089;&#1087;&#1086;&#1082;&#1086;&#1081;&#1085;&#1086;&#1075;&#1086; &#1095;&#1090;&#1077;&#1085;&#1080;&#1103;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; setTimeout(() =&gt; { <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; hintDiv.style.display = 'none';<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; hintDiv.innerText = ''; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }, 5000);<br>
+&nbsp;&nbsp;&nbsp; }<br>
+<br>
+&nbsp;&nbsp;&nbsp; function nextStep(step) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; document.querySelectorAll('.screen').forEach(s =&gt; s.classList.add('hidden'));<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; document.getElementById(`screen-${step}`).classList.remove('hidden');<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; currentStep = step;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; updateProgress();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; document.getElementById('feedback').innerText = '';<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; document.getElementById('hint-text').style.display = 'none';<br>
+&nbsp;&nbsp;&nbsp; }<br>
+<br>
+&nbsp;&nbsp;&nbsp; function checkAnswer(step, answer) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const feedback = document.getElementById('feedback');<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; let correct = false;<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (step === 1 &amp;&amp; answer === 2) correct = true;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (step === 2 &amp;&amp; answer === '&#1052;&#1080;&#1096;&#1072;') correct = true;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (step === 3 &amp;&amp; answer === '7 - 4 + 2 + 5') correct = true;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (step === 4 &amp;&amp; answer === 3) correct = true;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (step === 5 &amp;&amp; answer === 8) correct = true;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (step === 6 &amp;&amp; answer === 'correct') correct = true;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (step === 7) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const story = document.getElementById('final-story').value;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (story.length &gt; 3) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; document.getElementById('user-conclusion').innerText = "&#1058;&#1074;&#1086;&#1103; &#1074;&#1077;&#1088;&#1089;&#1080;&#1103;: " + story;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; correct = true;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } else {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; showHint(7, "&#1044;&#1077;&#1090;&#1077;&#1082;&#1090;&#1080;&#1074; &#1076;&#1091;&#1084;&#1072;&#1077;&#1090;: &#1076;&#1072;&#1074;&#1072;&#1081; &#1079;&#1072;&#1087;&#1080;&#1096;&#1077;&#1084; &#1093;&#1086;&#1090;&#1103; &#1073;&#1099; &#1087;&#1072;&#1088;&#1091; &#1089;&#1083;&#1086;&#1074; &#1076;&#1083;&#1103; &#1080;&#1089;&#1090;&#1086;&#1088;&#1080;&#1080;...");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (correct) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const randomPraise = praises[Math.floor(Math.random() * praises.length)];<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; feedback.innerText = randomPraise;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // &#1055;&#1072;&#1091;&#1079;&#1072; &#1087;&#1077;&#1088;&#1077;&#1076; &#1087;&#1077;&#1088;&#1077;&#1093;&#1086;&#1076;&#1086;&#1084; &#1095;&#1091;&#1090;&#1100; &#1076;&#1083;&#1080;&#1085;&#1085;&#1077;&#1077; &#1076;&#1083;&#1103; &#1089;&#1087;&#1086;&#1082;&#1086;&#1081;&#1089;&#1090;&#1074;&#1080;&#1103;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; setTimeout(() =&gt; {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; nextStep(step + 1);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }, 18</div>
+</body>
+</html>
