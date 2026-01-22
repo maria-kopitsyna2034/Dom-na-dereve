@@ -2,168 +2,99 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<title>Дело детектива Серёжи</title>
+<title>Детектив Серёжа</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 body {
-  margin: 0;
   font-family: Arial, sans-serif;
   background: #f3f1ec;
-  color: #333;
+  margin: 0;
+  padding: 20px;
 }
 
-.container {
-  max-width: 700px;
+.box {
+  max-width: 600px;
   margin: 40px auto;
-  background: #fff;
+  background: white;
   padding: 24px;
   border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
-h1 {
-  text-align: center;
-}
-
-.story {
-  margin-bottom: 20px;
-  font-size: 18px;
-}
-
-.task {
-  margin-top: 20px;
+button {
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  background: #5c7c6e;
+  color: white;
+  cursor: pointer;
 }
 
 input {
   padding: 10px;
   font-size: 16px;
   width: 100%;
-  box-sizing: border-box;
-}
-
-button {
-  margin-top: 15px;
-  padding: 12px 20px;
-  font-size: 16px;
-  background: #5c7c6e;
-  color: white;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-}
-
-button:hover {
-  background: #4b685c;
-}
-
-.modal {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.6);
-  display: none;
-  align-items: center;
-  justify-content: center;
-}
-
-.modal-content {
-  background: #fff;
-  padding: 20px;
-  border-radius: 14px;
-  max-width: 400px;
-  text-align: center;
+  margin-top: 10px;
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
-  <h1>🕵️‍♂️ Дело детектива Серёжи</h1>
-  <div id="story" class="story"></div>
-
-  <div id="task" class="task"></div>
-</div>
-
-<div id="modal" class="modal">
-  <div class="modal-content">
-    <p id="modalText"></p>
-    <button onclick="closeModal()">Продолжить</button>
-  </div>
-</div>
+<div class="box" id="app"></div>
 
 <script>
 const steps = [
   {
-    story: "В городе пропала важная улика. Детектив Серёжа начинает расследование.",
-    question: "В воздухе летели орёл, голубь, муха и стрекоза. Сколько птиц?",
-    answer: "2",
-    hint: "Мысль детектива: не все летающие — птицы."
+    text: "🕵️‍♂️ Детектив Серёжа начинает дело.\n\nСколько птиц летело: орёл, голубь, муха, стрекоза?",
+    answer: "2"
   },
   {
-    story: "След приводит к компании мальчиков.",
-    question: "Серёжа выше Саши, Олег ниже Саши, Миша выше Серёжи. Кто самый высокий?",
-    answer: "Миша",
-    hint: "Мысль детектива: сравни всех по очереди."
+    text: "Серёжа выше Саши, Олег ниже Саши, Миша выше Серёжи.\n\nКто самый высокий?",
+    answer: "Миша"
   },
   {
-    story: "Найден странный листок с числами.",
-    question: "Поставь знаки + или -: 7 ? 4 ? 2 ? 5 = 10",
-    answer: "7-4+2+5",
-    hint: "Мысль детектива: пробуй по шагам."
+    text: "Поставь + или - : 7 ? 4 ? 2 ? 5 = 10\n\n(напиши полностью)",
+    answer: "7-4+2+5"
   },
   {
-    story: "Детектив заходит в магазин.",
-    question: "Пакет вмещает 2 кг. Нужно купить 4 кг картошки и дыню 1 кг. Сколько пакетов?",
-    answer: "3",
-    hint: "Мысль детектива: считай общий вес."
+    text: "Пакет 2 кг. Нужно 4 кг картошки и дыню 1 кг.\n\nСколько пакетов?",
+    answer: "3"
   },
   {
-    story: "Последняя улика!",
-    question: "Кто главный детектив этого дела?",
-    answer: "Серёжа",
-    hint: "Мысль детектива: это же ты 🙂"
+    text: "Последний вопрос.\n\nКто главный детектив?",
+    answer: "Серёжа"
   }
 ];
 
-let current = 0;
+let step = 0;
 
-function renderStep() {
-  document.getElementById("story").innerText = steps[current].story;
-  document.getElementById("task").innerHTML = `
-    <p><strong>${steps[current].question}</strong></p>
-    <input id="answer" placeholder="Твой ответ">
-    <button onclick="check()">Проверить</button>
-    <p><em>${steps[current].hint}</em></p>
+function render() {
+  if (step >= steps.length) {
+    document.getElementById("app").innerHTML =
+      "<h2>🎉 Дело раскрыто!</h2><p>Ты справился сам. Ты умный 💛</p>";
+    return;
+  }
+
+  document.getElementById("app").innerHTML = `
+    <p>${steps[step].text.replace(/\n/g, "<br>")}</p>
+    <input id="answer">
+    <button onclick="check()">Ответить</button>
   `;
 }
 
 function check() {
   const value = document.getElementById("answer").value.trim();
-  if (value.toLowerCase() === steps[current].answer.toLowerCase()) {
-    showModal("Верно! Ты отличный детектив 🕵️‍♂️");
+  if (value.toLowerCase() === steps[step].answer.toLowerCase()) {
+    step++;
+    render();
   } else {
-    showModal("Почти! Подумай ещё 😉");
+    alert("Подумай ещё 😉");
   }
 }
 
-function showModal(text) {
-  document.getElementById("modalText").innerText = text;
-  document.getElementById("modal").style.display = "flex";
-}
-
-function closeModal() {
-  document.getElementById("modal").style.display = "none";
-  current++;
-  if (current < steps.length) {
-    renderStep();
-  } else {
-    document.querySelector(".container").innerHTML =
-      "<h1>🎉 Дело раскрыто!</h1><p>Ты справился со всеми заданиями. Настоящий детектив!</p>";
-  }
-}
-
-renderStep();
+render();
 </script>
 
 </body>
