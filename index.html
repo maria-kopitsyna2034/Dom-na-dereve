@@ -43,4 +43,173 @@ button {
   font-size: 18px;
   color: white;
   cursor: pointer;
-  mar
+  margin: 10px;
+}
+
+.options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Модальное окно */
+#modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#modalContent {
+  background: #fff;
+  padding: 30px;
+  border-radius: 30px;
+  max-width: 400px;
+  font-size: 22px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="app">
+
+<!-- Экран 0 -->
+<div id="step0">
+  <h1>🕵️ Дело пропавших пирожных</h1>
+  <p class="story">
+    Детектив Серёжа, в городе пропали праздничные пирожные!  
+    Нужно срочно выяснить, кто виноват.  
+    Ты готов начать расследование?
+  </p>
+  <button onclick="go(1)">Начать дело</button>
+</div>
+
+<!-- Задание 1 -->
+<div id="step1" class="hidden">
+  <p class="story">
+    🐦 Первый свидетель говорит:  
+    «В небе я видел орла, голубя, муху и стрекозу».
+  </p>
+  <p><b>Сколько птиц он видел?</b></p>
+  <div class="options">
+    <button onclick="check(1,2)">2</button>
+    <button onclick="check(1,4)">4</button>
+    <button onclick="check(1,3)">3</button>
+    <button onclick="check(1,1)">1</button>
+  </div>
+</div>
+
+<!-- Задание 2 -->
+<div id="step2" class="hidden">
+  <p class="story">
+    🧍‍♂️🧍‍♂️🧍‍♂️🧍‍♂️  
+    Серёжа выше Саши.  
+    Олег ниже Саши.  
+    Миша выше Серёжи.
+  </p>
+  <p><b>Кто самый высокий?</b></p>
+  <div class="options">
+    <button onclick="check(2,'Миша')">Миша</button>
+    <button onclick="check(2,'Серёжа')">Серёжа</button>
+    <button onclick="check(2,'Саша')">Саша</button>
+    <button onclick="check(2,'Олег')">Олег</button>
+  </div>
+</div>
+
+<!-- Задание 3 -->
+<div id="step3" class="hidden">
+  <p class="story">
+    🔢 На листе детектив нашёл странную запись:
+  </p>
+  <p><b>7 ? 4 ? 2 = 10</b></p>
+  <p>Какие знаки нужно поставить?</p>
+  <div class="options">
+    <button onclick="check(3,'+-')">+ –</button>
+    <button onclick="check(3,'++')">+ +</button>
+    <button onclick="check(3,'--')">– –</button>
+    <button onclick="check(3,'-+')">– +</button>
+  </div>
+</div>
+
+<!-- Задание 4 -->
+<div id="step4" class="hidden">
+  <p class="story">
+    ⚖️ На весах:  
+    тыква весит столько же, сколько 3 арбуза.
+  </p>
+  <p><b>Если один арбуз 3 кг, сколько весит тыква?</b></p>
+  <div class="options">
+    <button onclick="check(4,9)">9 кг</button>
+    <button onclick="check(4,6)">6 кг</button>
+    <button onclick="check(4,3)">3 кг</button>
+    <button onclick="check(4,12)">12 кг</button>
+  </div>
+</div>
+
+<!-- Финал -->
+<div id="step5" class="hidden">
+  <h1>🎉 Дело раскрыто!</h1>
+  <p class="story">
+    Ты прошёл все испытания,  
+    нашёл все улики  
+    и доказал, что ты настоящий детектив.
+  </p>
+  <p><b>Пирожные спасены 🍰</b></p>
+</div>
+
+</div>
+
+<!-- Модалка -->
+<div id="modal" class="hidden">
+  <div id="modalContent">
+    <p id="modalText"></p>
+    <button onclick="closeModal()">Продолжить</button>
+  </div>
+</div>
+
+<script>
+let current = 0;
+
+function go(n) {
+  document.getElementById("step" + current).classList.add("hidden");
+  document.getElementById("step" + n).classList.remove("hidden");
+  current = n;
+}
+
+function check(step, answer) {
+  const correct = {
+    1: 2,
+    2: "Миша",
+    3: "+-",
+    4: 9
+  };
+
+  if (answer === correct[step]) {
+    showModal("Верно! Отличная работа, детектив 🔍");
+    setTimeout(() => go(step + 1), 300);
+  } else {
+    showModal("Подумай ещё. Ты почти у цели 💚");
+  }
+}
+
+function showModal(text) {
+  document.getElementById("modalText").innerText = text;
+  document.getElementById("modal").classList.remove("hidden");
+}
+
+function closeModal() {
+  document.getElementById("modal").classList.add("hidden");
+}
+</script>
+
+</body>
+</html>
