@@ -1,124 +1,46 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Штаб детектива Серёжи</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Дело пропавших пирожных</title>
 
-  <style>
-    :root {
-      --bg-color: #fbf7f0;
-      --card-bg: #fffcf7;
-      --text-color: #5d4037;
-      --accent-green: #8bc34a;
-      --wood-brown: #a1887f;
-      --success-color: #7cb342;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: "Comic Sans MS", "Segoe UI Rounded", sans-serif;
+  background: #fbf7f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
 
-    body {
-      margin: 0;
-      padding: 20px;
-      font-family: 'Comic Sans MS', 'Segoe UI Rounded', sans-serif;
-      background: var(--bg-color);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      color: var(--text-color);
-    }
+#app {
+  max-width: 650px;
+  background: #fffdf8;
+  border: 8px solid #a1887f;
+  border-radius: 32px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
 
-    #game-container {
-      max-width: 620px;
-      width: 100%;
-      background: var(--card-bg);
-      padding: 40px;
-      border: 10px solid var(--wood-brown);
-      border-radius: 40px;
-      box-shadow: 0 15px 35px rgba(93,64,55,.2);
-      text-align: center;
-      position: relative;
-    }
+h1 {
+  margin-top: 0;
+}
 
-    h1 {
-      font-size: 30px;
-      margin-bottom: 20px;
-    }
+.story {
+  font-size: 20px;
+  line-height: 1.6;
+}
 
-    p {
-      font-size: 20px;
-      line-height: 1.6;
-    }
-
-    button {
-      background: var(--accent-green);
-      color: white;
-      border: none;
-      border-radius: 30px;
-      padding: 18px 26px;
-      font-size: 18px;
-      font-weight: bold;
-      cursor: pointer;
-      margin-top: 20px;
-    }
-
-    .options {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 15px;
-      margin-top: 30px;
-    }
-
-    .hidden {
-      display: none;
-    }
-  </style>
-</head>
-
-<body>
-
-<div id="game-container">
-
-  <div id="screen-0">
-    <h1>🏡 Штаб детектива Серёжи</h1>
-    <p>
-      В штаб поступил сигнал: кто-то съел все праздничные пирожные!  
-      Детектив, ты готов раскрыть дело?
-    </p>
-    <button onclick="next(1)">Начать расследование</button>
-  </div>
-
-  <div id="screen-1" class="hidden">
-    <h1>Задание №1</h1>
-    <p>
-      В небе летели: орёл, голубь, муха и стрекоза.  
-      Сколько <b>птиц</b> ты видишь?
-    </p>
-
-    <div class="options">
-      <button onclick="answer(1,1)">1</button>
-      <button onclick="answer(1,2)">2</button>
-      <button onclick="answer(1,3)">3</button>
-      <button onclick="answer(1,4)">4</button>
-    </div>
-  </div>
-
-</div>
-
-<script>
-  function next(n) {
-    document.querySelectorAll('[id^="screen"]').forEach(s => s.classList.add('hidden'));
-    document.getElementById('screen-' + n).classList.remove('hidden');
-  }
-
-  function answer(step, value) {
-    if (step === 1 && value === 2) {
-      alert('Верно! 🕵️‍♂️');
-      next(0);
-    } else {
-      alert('Подумай ещё 😉');
-    }
-  }
-</script>
-
-</body>
-</html>
+button {
+  background: #8bc34a;
+  border: none;
+  border-radius: 28px;
+  padding: 14px 22px;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+  mar
