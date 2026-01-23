@@ -1,101 +1,227 @@
 <!DOCTYPE html>
-<html lang="ru">
-<head>
-<meta charset="UTF-8">
-<title>Детектив Серёжа</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-body {
-  font-family: Arial, sans-serif;
-  background: #f3f1ec;
-  margin: 0;
-  padding: 20px;
-}
+<html lang="ru"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Детектив Серёжа и Тайна Золотого Блокнота</title> <style> /* СТИЛЬ "ДОМ НА ДЕРЕВЕ" / :root { --bg-color: #fdfaf5; --card-bg: #ffffff; --primary-color: #6b8e23; / Оливковый/зеленый / --accent-color: #d2b48c; / Дерево */ --text-color: #4a4a4a; --error-color: #e67e22; --button-hover: #556b2f; }
 
-.box {
-  max-width: 600px;
-  margin: 40px auto;
-  background: white;
-  padding: 24px;
-  border-radius: 16px;
-}
+    body {
+        margin: 0;
+        padding: 20px;
+        font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        line-height: 1.6;
+    }
 
-button {
-  padding: 12px 20px;
-  font-size: 16px;
-  border: none;
-  border-radius: 10px;
-  background: #5c7c6e;
-  color: white;
-  cursor: pointer;
-}
+    #game-container {
+        width: 100%;
+        max-width: 600px;
+        background: var(--card-bg);
+        padding: 40px 30px;
+        border-radius: 30px;
+        box-shadow: 0 10px 25px rgba(107, 142, 35, 0.1);
+        border: 4px solid var(--accent-color);
+        text-align: center;
+        transition: all 0.3s ease;
+    }
 
-input {
-  padding: 10px;
-  font-size: 16px;
-  width: 100%;
-  margin-top: 10px;
-}
+    h1 {
+        font-size: 24px;
+        color: var(--primary-color);
+        margin-top: 0;
+    }
+
+    .story-text {
+        font-size: 20px;
+        margin-bottom: 25px;
+        font-weight: 500;
+    }
+
+    .task-box {
+        background: #f9fbf2;
+        padding: 20px;
+        border-radius: 20px;
+        margin-bottom: 25px;
+    }
+
+    .question-text {
+        font-size: 18px;
+        margin-bottom: 20px;
+        display: block;
+    }
+
+    /* КНОПКИ И ВВОД */
+    .options-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+
+    button {
+        background-color: var(--primary-color);
+        color: white;
+        border: none;
+        padding: 18px 25px;
+        font-size: 18px;
+        border-radius: 15px;
+        cursor: pointer;
+        transition: transform 0.2s, background 0.2s;
+        box-shadow: 0 4px 0 #4e6b1a;
+    }
+
+    button:active {
+        transform: translateY(3px);
+        box-shadow: 0 1px 0 #4e6b1a;
+    }
+
+    input[type="text"], input[type="number"] {
+        width: 100%;
+        padding: 15px;
+        font-size: 20px;
+        border: 3px solid var(--accent-color);
+        border-radius: 15px;
+        text-align: center;
+        outline: none;
+        box-sizing: border-box;
+        margin-bottom: 15px;
+    }
+
+    .submit-btn {
+        width: 100%;
+        background-color: var(--primary-color);
+    }
+
+    /* ПОДСКАЗКИ И ОШИБКИ */
+    .feedback {
+        margin-top: 20px;
+        font-size: 18px;
+        min-height: 27px;
+        font-weight: bold;
+    }
+
+    .hint {
+        margin-top: 15px;
+        font-size: 15px;
+        color: #888;
+        font-style: italic;
+    }
+
+    .error-msg {
+        color: var(--error-color);
+    }
+
+    .success-msg {
+        color: var(--primary-color);
+    }
+
+    /* ФИНАЛ */
+    .final-screen h2 {
+        font-size: 32px;
+        color: var(--primary-color);
+    }
+
+    @media (max-width: 480px) {
+        .options-grid {
+            grid-template-columns: 1fr;
+        }
+        #game-container {
+            padding: 25px 15px;
+        }
+    }
 </style>
-</head>
+</head> <body>
 
-<body>
+<div id="game-container"> </div>
 
-<div class="box" id="app"></div>
+<script> const gameData = { title: "🕵️‍♂️ Дело о Золотом Блокноте", steps: [ { story: "Утром детектив Серёжа обнаружил, что из его штаба исчез Золотой Блокнот с важными секретами! На полу остался след...", question: "Чтобы начать погоню, ответь: в воздухе летели орёл, голубь, муха и стрекоза. Сколько ПТИЦ видел свидетель?", type: "buttons", options: ["1", "2", "3", "4"], correct: "2", hint: "Мысль детектива: мухи и стрекозы — это насекомые, а не птицы." }, { story: "Отлично! След ведёт к детской площадке. Там спорят трое ребят.", question: "Серёжа выше Саши. Олег ниже Саши. Миша выше Серёжи. Кто из них мог забросить блокнот на высокую ветку? (Кто самый высокий?)", type: "buttons", options: ["Саша", "Олег", "Миша", "Серёжа"], correct: "Миша", hint: "Мысль детектива: нарисуй черточки роста на бумаге, если запутался." }, { story: "Миша признался: он не брал блокнот, но видел, как его несли к магазину в тяжёлых пакетах.", question: "В один пакет влезает 2 кг вещей. Детективу нужно забрать 4 кг улик и 1 кг подарков. Сколько пакетов нужно взять Серёже?", type: "input", placeholder: "Напиши число", correct: "3", hint: "Мысль детектива: общий вес 5 кг. Считай: 2кг + 2кг + ещё кусочек..." }, { story: "В магазине Серёжа нашёл записку. Чтобы её прочитать, нужно понять, кто оставил улику.", question: "Загадка: 'Живёт в лесу, ухает по ночам, видит в темноте'. Кто это?", type: "buttons", options: ["Ворона", "Сова", "Кот", "Фонарь"], correct: "Сова", hint: "Мысль детектива: это лесная птица, которая не спит ночью." }, { story: "Почти у цели! Блокнот спрятан в дупле старого дуба. Но дупло закрыто на кодовый замок.", question: "Последний вопрос: кто сегодня самый умный, внимательный и лучший детектив в мире?", type: "input", placeholder: "Твоё имя", correct: "Серёжа", hint: "Мысль детектива: это твоё имя! Напиши его с большой буквы." } ] };
 
-<script>
-const steps = [
-  {
-    text: "🕵️‍♂️ Детектив Серёжа начинает дело.\n\nСколько птиц летело: орёл, голубь, муха, стрекоза?",
-    answer: "2"
-  },
-  {
-    text: "Серёжа выше Саши, Олег ниже Саши, Миша выше Серёжи.\n\nКто самый высокий?",
-    answer: "Миша"
-  },
-  {
-    text: "Поставь + или - : 7 ? 4 ? 2 ? 5 = 10\n\n(напиши полностью)",
-    answer: "7-4+2+5"
-  },
-  {
-    text: "Пакет 2 кг. Нужно 4 кг картошки и дыню 1 кг.\n\nСколько пакетов?",
-    answer: "3"
-  },
-  {
-    text: "Последний вопрос.\n\nКто главный детектив?",
-    answer: "Серёжа"
-  }
-];
+let currentStep = 0;
 
-let step = 0;
+const container = document.getElementById(&#39;game-container&#39;);
 
 function render() {
-  if (step >= steps.length) {
-    document.getElementById("app").innerHTML =
-      "<h2>🎉 Дело раскрыто!</h2><p>Ты справился сам. Ты умный 💛</p>";
-    return;
-  }
+    if (currentStep &gt;= gameData.steps.length) {
+        showFinal();
+        return;
+    }
 
-  document.getElementById("app").innerHTML = `
-    <p>${steps[step].text.replace(/\n/g, "<br>")}</p>
-    <input id="answer">
-    <button onclick="check()">Ответить</button>
-  `;
+    const step = gameData.steps[currentStep];
+    
+    let html = `
+        &lt;h1&gt;${gameData.title}&lt;/h1&gt;
+        &lt;div class=&quot;story-text&quot;&gt;${step.story}&lt;/div&gt;
+        &lt;div class=&quot;task-box&quot;&gt;
+            &lt;span class=&quot;question-text&quot;&gt;${step.question}&lt;/span&gt;
+    `;
+
+    if (step.type === &#39;buttons&#39;) {
+        html += `&lt;div class=&quot;options-grid&quot;&gt;`;
+        step.options.forEach(opt =&gt; {
+            html += `&lt;button onclick=&quot;checkAnswer(&#39;${opt}&#39;)&quot;&gt;${opt}&lt;/button&gt;`;
+        });
+        html += `&lt;/div&gt;`;
+    } else {
+        html += `
+            &lt;input type=&quot;text&quot; id=&quot;userInput&quot; placeholder=&quot;${step.placeholder}&quot; autofocus&gt;
+            &lt;button class=&quot;submit-btn&quot; onclick=&quot;checkInputAnswer()&quot;&gt;Проверить ответ&lt;/button&gt;
+        `;
+    }
+
+    html += `
+        &lt;/div&gt;
+        &lt;div id=&quot;feedback&quot; class=&quot;feedback&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;hint&quot;&gt;${step.hint}&lt;/div&gt;
+    `;
+
+    container.innerHTML = html;
+
+    // Позволяем нажимать Enter в инпуте
+    const input = document.getElementById(&#39;userInput&#39;);
+    if (input) {
+        input.addEventListener(&#39;keypress&#39;, (e) =&gt; {
+            if (e.key === &#39;Enter&#39;) checkInputAnswer();
+        });
+    }
 }
 
-function check() {
-  const value = document.getElementById("answer").value.trim();
-  if (value.toLowerCase() === steps[step].answer.toLowerCase()) {
-    step++;
-    render();
-  } else {
-    alert("Подумай ещё 😉");
-  }
+function checkAnswer(val) {
+    const step = gameData.steps[currentStep];
+    const feedbackDiv = document.getElementById(&#39;feedback&#39;);
+    
+    if (val.toLowerCase() === step.correct.toLowerCase()) {
+        feedbackDiv.innerHTML = `&lt;span class=&quot;success-msg&quot;&gt;Верно! Идём дальше...&lt;/span&gt;`;
+        setTimeout(() =&gt; {
+            currentStep++;
+            render();
+        }, 1500);
+    } else {
+        feedbackDiv.innerHTML = `&lt;span class=&quot;error-msg&quot;&gt;Подумай ещё, детектив 😉&lt;/span&gt;`;
+    }
 }
 
+function checkInputAnswer() {
+    const val = document.getElementById(&#39;userInput&#39;).value.trim();
+    if (!val) return;
+    checkAnswer(val);
+}
+
+function showFinal() {
+    container.innerHTML = `
+        &lt;div class=&quot;final-screen&quot;&gt;
+            &lt;h1&gt;🎉 ДЕЛО РАСКРЫТО!&lt;/h1&gt;
+            &lt;div class=&quot;story-text&quot;&gt;Ты нашёл Золотой Блокнот! Все секреты в безопасности.&lt;/div&gt;
+            &lt;div style=&quot;font-size: 80px; margin: 20px 0;&quot;&gt;🏆&lt;/div&gt;
+            &lt;h2&gt;Ты молодец!&lt;/h2&gt;
+            &lt;p&gt;Ты проявил логику, смекалку и терпение. Настоящий мастер расследований.&lt;/p&gt;
+            &lt;button onclick=&quot;location.reload()&quot; style=&quot;margin-top: 20px; background: var(--accent-color);&quot;&gt;Играть снова&lt;/button&gt;
+        &lt;/div&gt;
+    `;
+}
+
+// Запуск игры
 render();
 </script>
 
-</body>
-</html>
+</body> </html>
